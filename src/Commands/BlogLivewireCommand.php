@@ -1,10 +1,10 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace A4Anthony\BlogLivewire\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class BlogLivewireCommand extends Command
 {
     public $signature = 'skeleton';
 
