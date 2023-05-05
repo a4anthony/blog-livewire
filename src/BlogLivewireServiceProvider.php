@@ -18,16 +18,16 @@ class BlogLivewireServiceProvider extends PackageServiceProvider
          * More info: https://github.com/spatie/laravel-package-tools
          */
         $package
-            ->name("blog-livewire")
+            ->name('blog-livewire')
             ->hasConfigFile()
-            ->hasViews("blog-livewire")
+            ->hasViews('blog-livewire')
             ->hasAssets()
-            ->hasMigration("create_skeleton_table")
+            ->hasMigration('create_skeleton_table')
             ->hasCommand(BlogLivewireCommand::class);
     }
 
     public function bootingPackage()
     {
-        Livewire::component("some-component", Test::class);
+        Livewire::component('some-component', Test::class);
     }
 }

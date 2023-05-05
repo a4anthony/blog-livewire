@@ -9,7 +9,6 @@ use Livewire\Component;
 
 class Test extends Component
 {
-
     public function render(): View|Factory|Application
     {
         return view('blog-livewire::livewire.test');
