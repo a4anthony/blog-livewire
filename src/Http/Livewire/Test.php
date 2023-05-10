@@ -11,7 +11,7 @@ use Livewire\Component;
 
 class Test extends Component
 {
-    public $category = "";
+    public $category = '';
 
     public $page = 1;
 
@@ -19,22 +19,24 @@ class Test extends Component
 
     public $hasPractice = false;
 
-    protected $queryString = ["category", "hasPractice"];
+    protected $queryString = ['category', 'hasPractice'];
 
     public function mount()
     {
-        if (request("category")) {
-            $this->category = request("category");
+        if (request('category')) {
+            $this->category = request('category');
         } else {
-            $this->category = "all";
+            $this->category = 'all';
         }
     }
+
     public function getCategoriesProperty()
     {
-        $categories = BlogCategory::orderBy("name", "asc")
+        $categories = BlogCategory::orderBy('name', 'asc')
             ->get()
             ->toArray();
-        array_unshift($categories, ["name" => "All", "slug" => "all"]);
+        array_unshift($categories, ['name' => 'All', 'slug' => 'all']);
+
         return $categories;
     }
 
@@ -46,19 +48,20 @@ class Test extends Component
 
     public function getPostsProperty()
     {
-        $category = BlogCategory::where("slug", $this->category)->first();
+        $category = BlogCategory::where('slug', $this->category)->first();
         if ($category == null) {
-            $this->category = "all";
+            $this->category = 'all';
         }
-        if ($this->category == "all") {
+        if ($this->category == 'all') {
             $posts = new BlogPost();
         } else {
-            $posts = BlogPost::where("category_id", $category->id);
+            $posts = BlogPost::where('category_id', $category->id);
         }
         if ($this->hasPractice) {
-            $posts = $posts->where("has_practice", true);
+            $posts = $posts->where('has_practice', true);
         }
-        return $posts->orderBy("published_at", "desc")->paginate($this->length);
+
+        return $posts->orderBy('published_at', 'desc')->paginate($this->length);
     }
 
     public function loadMore()
@@ -68,9 +71,9 @@ class Test extends Component
 
     public function render(): View|Factory|Application
     {
-        return view("blog-livewire::livewire.test", [
-            "categories" => $this->categories,
-            "posts" => $this->posts,
+        return view('blog-livewire::livewire.test', [
+            'categories' => $this->categories,
+            'posts' => $this->posts,
         ]);
     }
 }

@@ -9,20 +9,21 @@ use Illuminate\Support\Str;
 class BlogPost extends Model
 {
     use HasFactory;
+
     protected $guarded = [];
 
-    protected $appends = ["read_time"];
+    protected $appends = ['read_time'];
 
     public function getReadTimeAttribute()
     {
-        Str::macro("readDuration", function (...$text) {
-            $totalWords = str_word_count(implode(" ", $text));
+        Str::macro('readDuration', function (...$text) {
+            $totalWords = str_word_count(implode(' ', $text));
             $minutesToRead = round($totalWords / 200);
 
             return (int) max(1, $minutesToRead);
         });
 
-        return Str::readDuration($this->attributes["content"]) . " min read";
+        return Str::readDuration($this->attributes['content']).' min read';
     }
 
     public function category()
