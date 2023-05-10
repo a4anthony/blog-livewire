@@ -12,16 +12,17 @@ class BlogCategoryFactory extends Factory
     public function definition()
     {
         $categories = [
-            "Grammar",
-            "Vocabulary",
-            "Pronunciation",
-            "Culture",
-            "General English",
+            'Grammar',
+            'Vocabulary',
+            'Pronunciation',
+            'Culture',
+            'General English',
         ];
         $name = $this->faker->unique()->randomElement($categories);
+
         return [
-            "name" => $name,
-            "slug" => \Illuminate\Support\Str::slug($name),
+            'name' => $name,
+            'slug' => \Illuminate\Support\Str::slug($name),
         ];
     }
 }
