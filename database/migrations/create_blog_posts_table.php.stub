@@ -1,0 +1,28 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    public function up()
+    {
+        Schema::create('blog_posts', function (Blueprint $table) {
+            $table->id();
+
+            $table->string("title");
+            $table->string("slug");
+            $table->string("image");
+            $table->string("author_avatar");
+            $table->string("author");
+            $table->longText("content");
+            $table->foreignId("category_id")->constrained("blog_categories");
+            $table->boolean("published")->default(false);
+            $table->boolean("has_practice")->default(false);
+            $table->timestamp("published_at")->nullable();
+
+            $table->timestamps();
+        });
+    }
+};
