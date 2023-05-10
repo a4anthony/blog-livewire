@@ -6,6 +6,6 @@ class BlogLivewire
 {
     public function test()
     {
-        dd("This is a test method from BlogLivewire class");
+        dd('This is a test method from BlogLivewire class');
     }
 }
