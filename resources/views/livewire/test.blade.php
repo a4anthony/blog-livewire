@@ -17,17 +17,15 @@
                 <x-blog-livewire::post-card :post="$post" :category="$category"/>
             @endforeach
         </div>
-    </div>
 
-
-
-    <div class="bl-mt-20 bl-flex bl-justify-center">
-        <button
-            type="button"
-            wire:click="loadMore"
-            @disabled($posts->lastItem() === $posts->total())
-            class="bl-bg-white hover:bl-bg-bg-gray-300 hover:bl-shadow-xl bl-animate bl-border bl-border-gray-300 bl-text-gray-700 bl-text-sm bl-px-8 bl-py-3 bl-rounded-3xl bl-font-medium"
-        >Load more...
-        </button>
+        <div class="bl-mt-20 bl-flex bl-justify-center">
+            <button
+                type="button"
+                wire:click="loadMore"
+                @disabled($posts->lastItem() === $posts->total())
+                class="bl-bg-white hover:bl-bg-bg-gray-300 hover:bl-shadow-xl bl-animate bl-border bl-border-gray-300 bl-text-gray-700 bl-text-sm bl-px-8 bl-py-3 bl-rounded-3xl bl-font-medium"
+            >Load more...
+            </button>
+        </div>
     </div>
 </div>
