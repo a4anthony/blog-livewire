@@ -1,4 +1,4 @@
-<div class="bl-py-12 sm:bl-py-20 bl-max-w-5xl bl-mx-auto bl-px-6">
+<div class="bl-py-12 sm:bl-py-20 bl-max-w-6xl bl-mx-auto bl-px-6">
   <img
       src="{{ $post->image }}"
       alt=""
