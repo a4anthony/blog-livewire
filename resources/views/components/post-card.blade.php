@@ -33,7 +33,9 @@
                     {{ $post->title }}
                 </a>
             </h3>
-            <p class="bl-mt-5 bl-text-sm bl-leading-6 bl-text-gray-600 bl-line-clamp-3">{!!  $post->content !!}</p>
+            <div class="bl-mt-5 bl-text-sm bl-leading-6 bl-text-gray-600 bl-line-clamp-3">
+                {!!  $post->content !!}
+            </div>
         </div>
         <div class="bl-relative bl-mt-8 bl-flex bl-items-center bl-gap-x-2">
             <img

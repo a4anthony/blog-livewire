@@ -12,3 +12,9 @@ cd ~/www/blog/
 
 # if you are deploying to a custom domain
 php artisan vendor:publish --tag="blog-livewire-assets" --force
+
+
+cd ~/www/book-a-prof/
+
+
+php artisan vendor:publish --tag="blog-livewire-assets" --force

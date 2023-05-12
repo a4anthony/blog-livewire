@@ -1324,8 +1324,8 @@ select {
   max-width: 48rem;
 }
 
-.bl-max-w-6xl {
-  max-width: 72rem;
+.bl-max-w-4xl {
+  max-width: 56rem;
 }
 
 .bl-max-w-7xl {
