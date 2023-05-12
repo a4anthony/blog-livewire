@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+button {
+    /*all: unset;*/
+}
 @layer components {
     .bl-animate {
         @apply bl-transition-all bl-delay-100 bl-duration-300 bl-ease-in-out;

@@ -128,6 +128,14 @@
 
         <div class="bl-flex bl-justify-end bl-space-x-4 bl-mt-6">
             @if(!$post)
+                @if(config('app.env') !== 'production')
+                    <button
+                        type="button"
+                        wire:click="testData"
+                        class="bl-btn bl-btn-white bl-btn-sm"
+                    >Test Data
+                    </button>
+                @endif
                 <button
                     type="button"
                     class="bl-btn bl-btn-white bl-btn-sm"
@@ -176,6 +184,10 @@
                 editor.model.document.on('change:data', () => {
                 @this.set('content', editor.getData());
                 })
+
+                window.addEventListener('trix-change', (e) => {
+                    editor.setData(e.detail.value)
+                })
             })
             .catch(error => {
                 console.error(error);
@@ -189,4 +201,8 @@
         })
     </script>
 @endpush
+
+
+
+
 

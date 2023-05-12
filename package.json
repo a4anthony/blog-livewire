@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "build": "npx tailwindcss -i ./resources/dist/input.css -o ./resources/dist/output.css -m"
+    "build": "npx tailwindcss -i ./resources/dist/input.css -o ./resources/dist/output.css"
   },
   "devDependencies": {
     "@tailwindcss/forms": "^0.5.3",
