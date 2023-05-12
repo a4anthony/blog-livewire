@@ -87,7 +87,7 @@ class CreatePost extends Component
         }
 
         return redirect()
-            ->route(config("blog-livewire.route_prefix") . ".index")
+            ->route(config("blog-livewire.admin_blog_index_route"))
             ->with("success", "Post created");
     }
 
