@@ -106,8 +106,8 @@ class CreatePost extends Component
 
     public function testData()
     {
-        $this->title = "Test Title " . Str::random(rand(5, 10));
-        $this->content = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad deserunt, doloremque doloribus ducimus, eos incidunt
+        $this->title = 'Test Title '.Str::random(rand(5, 10));
+        $this->content = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad deserunt, doloremque doloribus ducimus, eos incidunt
              ipsum iste itaque iusto magni obcaecati sed suscipit vitae? Adipisci aperiam assumenda beatae consequuntur cumque dolores 
              dolorum error excepturi illum incidunt iure laboriosam laudantium, maiores optio, perferendis, qui quis sapiente unde velit voluptates?
               Blanditiis corporis ex fugit laudantium pariatur, sed sit totam! Quaerat, voluptatem, voluptatum? Accusamus ad assumenda atque corporis dolorem
@@ -124,10 +124,10 @@ class CreatePost extends Component
                         quidem quo repellendus totam unde voluptates voluptatibus! Ab alias aliquam architecto asperiores at consequatur cum dignissimos dolorem dolores ducimus, eius facilis illum impedit
                          incidunt inventore laudantium libero modi nobis, omnis provident, quae quidem reiciendis rerum sapiente vero voluptates voluptatum? Aliquid aspernatur, at, consectetur cupiditate 
                          doloremque doloribus earum enim eum exercitationem expedita id magni maiores, modi pariatur perspiciatis quis rerum sequi similique sunt ut veritatis vero voluptatibus. Aspernatur
-                          earum error expedita necessitatibus nostrum praesentium quia quibusdam quo sunt vel. Consectetur enim eos error explicabo facilis fuga ipsa perspiciatis sapiente? Esse fugiat labore";
+                          earum error expedita necessitatibus nostrum praesentium quia quibusdam quo sunt vel. Consectetur enim eos error explicabo facilis fuga ipsa perspiciatis sapiente? Esse fugiat labore';
         $this->category = 1;
-        $this->status = "true";
-        $this->dispatchBrowserEvent("trix-change", ["value" => $this->content]);
+        $this->status = 'true';
+        $this->dispatchBrowserEvent('trix-change', ['value' => $this->content]);
     }
 
     public function render(): View|Factory|Application
